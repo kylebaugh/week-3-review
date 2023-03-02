@@ -1,0 +1,156 @@
+Create HTML, CSS, and JS files
+index.html
+index.css
+index.js
+
+Use ! template to populate html
+
+Before building any structural HTML elements, link the CSS file and script tag for JS file
+    <link rel="stylesheet" href="./index.css">
+    <script src="./index.js"></script>
+
+Create Header element to hold the name of your pizza place
+Create a Main element that will hold your pizzas
+
+In CSS file, select the body element to apply flex for spacing of child elements 
+
+body{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+Back in HTML, add an h1 element inside of the header
+Add title of pizza place to h1 element 
+        <h1>Peter Piper's Perfect Pizzeria</h1>
+
+In CSS file, select header element and give it the following properties
+	
+header{
+    height: 20vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(254, 87, 87);
+    font-size: 44px;
+}
+
+
+Back in HTML, in the Main element, create 1 div element and 1 form element
+Give the div an id of “pizzaDisplay”
+Inside the div, create 3 sections that will be used to display pizzas
+Give each section a unique id “pizza1, pizza2, pizza3”
+Give a class for each section “foodItem”
+
+In each section, add an img element and a p element
+Give each img a src to a picture of a type of pizza, and an alt with the pizzas name
+Inside the p tag, add the name of each pizza
+
+In CSS, select the main tag and give it the following properties
+main{
+    height: 80vh;
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+In CSS, select the pizzaDisplay id and give it the following properties
+
+#pizzaDisplay{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+In CSS select foodItem class and give the following properties
+
+.foodItem{
+    height:35vh;
+    width:20vw;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+In CSS, select img tag and give the following property
+
+img{
+    width: 20vw;
+}
+
+
+In CSS, select each pizza id and give each a different background color
+
+#pizza1{
+    background-color: rgb(254, 87, 87);
+}
+
+#pizza2{
+    background-color: rgb(177, 47, 7);
+}
+
+#pizza3{
+    background-color: rgb(239, 239, 126);
+}
+
+
+
+In the JS file, add a query selector for each pizza id
+let pizza1 = document.querySelector('#pizza1')
+let pizza2 = document.querySelector('#pizza2')
+let pizza3 = document.querySelector('#pizza3')
+
+
+
+Write a function for each pizza
+
+const pepperoni = () => {
+    alert('Pepperoni is the best!')
+}
+
+const bbq = () => {
+    alert('Everyone loves barbeque chicken!')
+}
+
+const hawaiian = () => {
+    alert('...Why is there pineapple on my pizza?')
+}
+
+
+Write an event listener to trigger on specific events
+
+pizza1.addEventListener('mouseover', pepperoni)
+pizza2.addEventListener('click', bbq)
+pizza3.addEventListener('dblclick', hawaiian)
+
+
+Back in HTML, add 3 input fields to the form element that will accept user suggestions
+    - Input 1 will have a type of “text” and a placeholder of “Pizza Name”
+    - Input 2 will have a type of “text” and a placeholder of “Pizza Picture”
+    - Input 3 will have a type of “submit”
+
+
+In JS, select the form element with a queryselector
+let pizzaForm = document.querySelector('form')
+
+
+Write a function that takes in an (e) param for the form submission
+
+const suggestion = (e) => {
+    e.preventDefault()
+
+    alert("Good suggestion! We'll get to it in 3-5 business years.")
+}
+
+
+Write event listener for form with a submit event
+
+pizzaForm.addEventListener('submit', suggestion)
+
+
